@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default" data-target=".bs-example-modal-lg" data-toggle="modal">添加元素</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">删除元素</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-default">添加元素动画</button>
+    </div>
+  </div>
+  <!-- 添加模态框 -->
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">添加元素</h4>
+          </div>
+          <div class="modal-body">
+            <div role="tabpanel" class="tab-pane active" id="addForm">
+                <form>
+                    <div class="form-group">
+                      <input type="text" name="dom" class="form-control" placeholder="请输入要填加的元素">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="content" class="form-control" placeholder="添加元素的文本内容">
+                    </div>
+            <button type="button" class="btn btn-primary">确定</button>
+
+                  </form>
+            </div>
+          </div>
+         
+      </div>
+    </div>
+  </div>
+<body>
+     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+     <script src="js/bootstrap.min.js"></script>
+   <script>
+       //获取元素
+       var $addFormFrom = $("#addForm").find("form");
+       //获取控件
+       var $addFormDom = $addFormFrom.find("input[name=dom]")
+       var $addFormContent = $addFormFrom.find("input[name=content]")
+       var $addDom_submit =  $addFormFrom.find("button")
+     
+       $addDom_submit.click(function(){
+        // Ifram.p(null,"测试")
+        
+        let dom = $addFormDom.val();
+        let text = $addFormContent.val()
+          // 存储页面dom元素
+          var arr = [
+            {id:"app"},
+            Ifram.p(null,"测试")
+            ]
+        arr.push(Ifram.$addFormDom.val()(null,text))    
+        let result = Ifram.ifram(...arr)
+        // dom 上树
+        document.body.appendChild(result);
+       })
+        // 创建 ifram库
+        let Ifram = new Proxy({}, {
+            // 取值方法
+            get(obj, name) {
+                console.log(obj, name)
+                // 返回函数
+                return function (attrs, ...children) {
+                    // 创建容器元素
+                    let dom = document.createElement(name);
+                    // 遍历属性
+                    attrs && Object.keys(attrs).forEach(key => dom.setAttribute(key, attrs[key]))
+                    // 遍历子元素
+                    children.forEach(item => {
+                        // 如果是文本
+                        if (typeof item === 'string') {
+                            // 添加文本节点
+                            dom.appendChild(document.createTextNode(item))
+                        } else {
+                            // 添加元素
+                            dom.appendChild(item)
+                        }
+                    })
+                    // 返回创建的元素
+                    return dom;
+                }
+            }
+        })
+      
+        
+    </script>
+      
+</body>
+
+</html>

@@ -1,11 +1,11 @@
 # 每周总结可以写在这里
 
-# 2. 重学 | 构建知识体系
+## 2. 重学 | 构建知识体系
 
 ![前端大纲](./前端大纲/js.png
 )
 
-## 实体补全
+### 实体补全
 xhtml-special.ent
 ````html
 <!-- C0 Controls and Basic Latin -->
@@ -473,4 +473,18 @@ xhtml-lat1.ent
 <!ENTITY yuml   "&#255;"> <!-- latin small letter y with diaeresis,
                                   U+00FF ISOlat1 -->
 
+````
+
+### ECMA 中找到所有的类型（Type）
+````js
+Number
+String
+Boolean
+Null
+Undefined
+Object
+Symbol
+内部类型
+	Reference
+	Completion Record
 ````

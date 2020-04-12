@@ -485,6 +485,11 @@ Undefined
 Object
 Symbol
 内部类型
-	Reference
-	Completion Record
+	The Reference Specification Type
+	The List Specification Type
+	The Completion Specification Type
+	The Property Descriptor and Property Identifier Specification Types
+	 The Lexical Environment and Environment Record Specification Types
+	Algorithms for Object Internal Methods
+	 [[GetOwnProperty]] (P)
 ````

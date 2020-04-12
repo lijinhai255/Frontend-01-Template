@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./json-to-table.min.js"></script>
+    <style>
+        table{
+            border: 1px solid #000000;
+            width: 100%;
+            
+        }
+        tr{
+            border: 1px solid #000000;
+
+        }
+        td{
+            border: 1px solid #000000;
+
+        }
+    </style>
+</head>
+<body>
+   
+    
+<script>
+const { jsonToHTMLTable } = JSONToTable
+const data = [
+  {
+    name: 'Jim',
+    age: 18,
+    courses: [
+      { title: 'English', score: 87 },
+      { title: 'Chinese', score: 67 }
+    ]
+  },
+  {
+    name: 'Lucy',
+    age: 17,
+    courses: [
+      { title: 'Math', score: 97,},
+      { title: 'Music', score: 77 },
+      { title: 'Gym', score: 57 }
+    ]
+  }
+]
+const tableHTML = jsonToHTMLTable(data)
+console.log(tableHTML)
+document.body.appendChild(tableHTML)
+</script>
+</body>
+</html>

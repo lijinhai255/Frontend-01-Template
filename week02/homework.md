@@ -1,5 +1,48 @@
 ## 课后作业：
 写一个正则表达式 匹配所有 Number 直接量
+````
+Number Conversions
+StringNumericLiteral ::: See 9.3.1
+StrWhiteSpaceopt
+StrWhiteSpaceopt StrNumericLiteral StrWhiteSpaceopt
+StrWhiteSpace ::: See 9.3.1
+StrWhiteSpaceChar StrWhiteSpaceopt
+StrWhiteSpaceChar ::: See 9.3.1
+WhiteSpace
+LineTerminator
+StrNumericLiteral ::: See 9.3.1
+StrDecimalLiteral
+HexIntegerLiteral
+StrDecimalLiteral ::: See 9.3.1
+StrUnsignedDecimalLiteral
++ StrUnsignedDecimalLiteral
+- StrUnsignedDecimalLiteral
+StrUnsignedDecimalLiteral ::: See 9.3.1
+Infinity
+DecimalDigits . DecimalDigitsopt ExponentPartopt
+. DecimalDigits ExponentPartopt
+DecimalDigits ExponentPartopt
+DecimalDigits ::: See 9.3.1
+DecimalDigit
+DecimalDigits DecimalDigit
+DecimalDigit ::: one of See 9.3.1
+0 1 2 3 4 5 6 7 8 9
+ExponentPart ::: See 9.3.1
+ExponentIndicator SignedInteger
+ExponentIndicator ::: one of See 9.3.1
+e E
+SignedInteger ::: See 9.3.1
+DecimalDigits
++ DecimalDigits
+- DecimalDigits
+218 © Ecma International 2011
+HexIntegerLiteral ::: See 9.3.1
+0x HexDigit
+0X HexDigit
+HexIntegerLiteral HexDigit
+HexDigit ::: one of See 9.3.1
+0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F
+````
 ````js
  /^-?\d+$|^(-?\d+)(\.\d+)?$|^0[bB][01]+$|^0[oO][0-7]+$|^0[xX][0-9a-fA-F]+$/g;
 ````

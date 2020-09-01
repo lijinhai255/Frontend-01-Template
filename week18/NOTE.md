@@ -1,1 +1,10 @@
-# 每周总结可以写在这里
+## Dev 工具
+Server
+    bulid： webpack babel
+    watch
+    mock
+    http
+Client
+    debugger： vscode devtool
+    source map
+https://github.com/fsevents/fsevents/

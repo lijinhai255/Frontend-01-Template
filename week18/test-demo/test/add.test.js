@@ -8,3 +8,10 @@ describe('Add function', function () {
     })
   })
 })
+describe('Add function', function () {
+  describe('3 + 2', function () {
+    it('should return 3 when 1 + 2', function () {
+      assert.equal(add(3, 2), 5)
+    })
+  })
+})
